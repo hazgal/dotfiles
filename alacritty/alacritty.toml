@@ -1,0 +1,24 @@
+#import = [
+#	"~/.config/alacritty/themes/"
+#]
+
+[window]
+	dynamic_padding = true
+	padding = { x = 9, y = 9 }
+
+[colors]
+	[colors.primary]
+		foreground = "#e4e8e9"
+		background = "#010909"
+
+[font]
+	normal = { family = "Hack", style = "Regular"}
+	bold =	{ family = "Hack", style = "Bold"}
+	bold_italic = { family = "Hack", style = "Bold Italic"}
+	italic = { family = "Hack", style = "Italic"}
+	size = 14
+
+[cursor]
+	style = { shape = "Block", blinking = "Off" } 
+		# shape = "Block" "Underline" or "Beam"
+		# blinking = "Never" "Off" "On" or "Always"
