@@ -31,7 +31,13 @@ export EDITOR=vim
 alias poweroff='doas /sbin/poweroff'
 alias reboot='doas /sbin/reboot'
 
+# Bash
+bind 'set colored-stats on'			# color file/folder completions like ls
+bind 'set completion-ignore-case on'		# case-insensitive tab-completion
+bind 'set menu-complete-display-prefix on'	# display partial and menu right away
+
 # GIT STATUS AT BASH PROMPT
+#
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -43,7 +49,6 @@ function parse_git_branch() {
 		echo ""
 	fi
 }
-
 # get current status of git repo
 function parse_git_dirty {
 	status=`git status 2>&1 | tee`
@@ -80,6 +85,4 @@ function parse_git_dirty {
 }
 
 # Bash prompt
-
-
-export PS1="\[\033[1;32m\]\u\[\033[1;36m\]@\\[\033[2;31m\]\h:\[\033[0;36m\]\w\\[\033[2;32m\] \`parse_git_branch\`\\n \[\033[2;32m\] ⮡ \[\033[1;31m\]$\[\033[00m\] "
+export PS1="\[\033[1;32m\]\u\[\033[1;36m\]@\\[\033[2;31m\]\h:\[\033[0;36m\]\w\\[\033[2;32m\] \`parse_git_branch\`\\n \[\033[2;32m\] ⮡ \[\033[00m\]\$ "
